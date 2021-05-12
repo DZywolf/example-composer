@@ -1,0 +1,32 @@
+name: PHPUnit
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: PHP ${{ matrix.php-versions }}
+    strategy:
+      matrix:
+        php-versions: ['7.3', '7.4']
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Composer
+        uses: php-actions/composer@v5
+        with:
+          php_version: ${{ matrix.php-versions }}
+          version: 2
+
+      - name: PHPUnit Tests
+        uses: php-actions/phpunit@v2
+        with:
+          bootstrap: vendor/autoload.php
+          configuration: phpunit.xml.dist
+          args: --coverage-text
