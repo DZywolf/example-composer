@@ -11,10 +11,10 @@ use PHPUnit\Framework\TestCase;
  */
 class HelloTest extends TestCase
 {
-	public function testHelloWorld()
-	{
-		$hello = new Hello();
+    public function testHelloWorld()
+    {
+        $hello = new Hello();
 
-		$this->assertEquals("Hello World!", $hello->helloWorld());
-	}
+        $this->assertEquals('Hello World!', $hello->helloWorld());
+    }
 }

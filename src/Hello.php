@@ -8,16 +8,19 @@ namespace ExampleComposer;
  */
 class Hello
 {
-	/**
-	 * Hello constructor.
-	 */
-	function __construct()
-	{
-		# code...
-	}
+    /**
+     * Hello constructor.
+     */
+    function __construct()
+    {
+        # code...
+    }
 
-	public function helloWorld()
-	{
-		return "Hello World!";
-	}
+    /**
+     * @return string
+     */
+    public function helloWorld()
+    {
+        return 'Hello World!';
+    }
 }
